@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06D6A0" />
+      <stop offset="100%" stop-color="#118AB2" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#073B4C" />
+      <stop offset="50%" stop-color="#FFD166" />
+      <stop offset="100%" stop-color="#EF476F" />
+    </linearGradient>
+    <linearGradient id="glowGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFD166" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#073B4C" stop-opacity="0.9"/>
+    </linearGradient>
+    <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFD166" stop-opacity="0.9"/>
+      <stop offset="60%" stop-color="#EF476F" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#06D6A0" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="512" height="512" rx="48" fill="url(#bgGrad)" />
+  <circle cx="256" cy="230" r="160" fill="url(#sunGlow)" />
+  
+  <!-- Outer Tech / Geometric Frame -->
+  <circle cx="256" cy="230" r="170" fill="none" stroke="#073B4C" stroke-width="3" stroke-dasharray="8 6" opacity="0.6"/>
+  <circle cx="256" cy="230" r="185" fill="none" stroke="#FFD166" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- Mascot Robot / Friendly Explorer Elements -->
+  <g filter="url(#softShadow)" transform="translate(256, 220)">
+    <!-- Robot Head / Body Base -->
+    <rect x="-85" y="-75" width="170" height="135" rx="35" fill="url(#accentGrad)" filter="url(#neonGlow)"/>
+    <rect x="-65" y="-55" width="130" height="75" rx="18" fill="#06D6A0" stroke="#FFD166" stroke-width="3"/>
+    
+    <!-- Heart / Expressive Screen Eyes -->
+    <circle cx="-32" cy="-20" r="14" fill="#FFD166" filter="url(#neonGlow)"/>
+    <circle cx="32" cy="-20" r="14" fill="#FFD166" filter="url(#neonGlow)"/>
+    <circle cx="-35" cy="-24" r="4" fill="#FFFFFF"/>
+    <circle cx="29" cy="-24" r="4" fill="#FFFFFF"/>
+    <path d="M-15,8 Q0,20 15,8" fill="none" stroke="#073B4C" stroke-width="4" stroke-linecap="round"/>
+    
+    <!-- Cute Antenna with Glowing Orb -->
+    <line x1="0" y1="-75" x2="0" y2="-110" stroke="#FFD166" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="0" cy="-115" r="16" fill="#EF476F" filter="url(#neonGlow)"/>
+    <circle cx="-4" cy="-119" r="4" fill="#FFFFFF"/>
+    
+    <!-- Headphone / Ear Dials -->
+    <rect x="-98" y="-40" width="15" height="45" rx="7" fill="#EF476F"/>
+    <rect x="83" y="-40" width="15" height="45" rx="7" fill="#EF476F"/>
+    
+    <!-- Chest Bowtie / Circuit Badge -->
+    <polygon points="-25,75 25,75 0,95" fill="#FFD166"/>
+    <polygon points="-25,115 25,115 0,95" fill="#FFD166"/>
+    <circle cx="0" cy="95" r="7" fill="#06D6A0"/>
+  </g>
+
+  <!-- Bottom Text Banner -->
+  <g filter="url(#softShadow)">
+    <rect x="40" y="405" width="432" height="68" rx="20" fill="#06D6A0" stroke="url(#accentGrad)" stroke-width="2.5" />
+    <text x="256" y="445" font-family="'Outfit', 'Inter', 'Segoe UI', sans-serif" font-weight="800" font-size="20" fill="#FFD166" text-anchor="middle" letter-spacing="1.5">
+      COSMIC CHAMELEON ART & SCI
+    </text>
+    <text x="256" y="464" font-family="'Inter', sans-serif" font-weight="600" font-size="11" fill="#073B4C" text-anchor="middle" letter-spacing="3" opacity="0.9">
+      MASCOTS & ROBOTICS
+    </text>
+  </g>
+</svg>

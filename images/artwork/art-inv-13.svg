@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="artBgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0077B6" />
+      <stop offset="60%" stop-color="#00B4D8" />
+      <stop offset="100%" stop-color="#FF595E" />
+    </linearGradient>
+    <linearGradient id="artAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFCA3A" />
+      <stop offset="100%" stop-color="#8AC926" />
+    </linearGradient>
+    <radialGradient id="nebulaSun" cx="50%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#FFCA3A" stop-opacity="0.95"/>
+      <stop offset="35%" stop-color="#8AC926" stop-opacity="0.6"/>
+      <stop offset="70%" stop-color="#00B4D8" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#0077B6" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="artGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="600" height="800" fill="url(#artBgGrad)" />
+  
+  <!-- Outer Poster Border -->
+  <rect x="24" y="24" width="552" height="752" rx="16" fill="none" stroke="#FFCA3A" stroke-width="3" opacity="0.65"/>
+  <rect x="32" y="32" width="536" height="736" rx="12" fill="none" stroke="#FF595E" stroke-width="1" opacity="0.4"/>
+  
+  <!-- Grand Sun / Celestial Center Glow -->
+  <circle cx="300" cy="300" r="220" fill="url(#nebulaSun)" />
+
+  <!-- Invention Blueprint & Engineering Blueprint -->
+  <g>
+    <!-- Blueprint Drafting Grid Lines -->
+    <line x1="60" y1="120" x2="540" y2="120" stroke="#FF595E" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.5"/>
+    <line x1="60" y1="240" x2="540" y2="240" stroke="#FF595E" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.5"/>
+    <line x1="60" y1="360" x2="540" y2="360" stroke="#FF595E" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.5"/>
+    <line x1="60" y1="480" x2="540" y2="480" stroke="#FF595E" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.5"/>
+    
+    <!-- Flying Machine / Robotic Craft Wings -->
+    <path d="M300,180 Q450,220 500,320 L300,300 L100,320 Q150,220 300,180 Z" fill="url(#artAccent)" opacity="0.85" filter="url(#artGlow)"/>
+    <line x1="300" y1="180" x2="300" y2="480" stroke="#FFCA3A" stroke-width="5"/>
+    
+    <!-- Caliper & Compass Dimension Rings -->
+    <circle cx="300" cy="330" r="90" fill="none" stroke="#FFCA3A" stroke-width="3" stroke-dasharray="8 6"/>
+    <circle cx="300" cy="330" r="30" fill="#0077B6" stroke="#8AC926" stroke-width="4"/>
+    <path d="M220,330 L380,330" stroke="#FFCA3A" stroke-width="2"/>
+    <text x="390" y="335" font-family="monospace" font-size="12" fill="#FFCA3A">Ø 180mm</text>
+  </g>
+
+  <!-- Poster Typography Banner -->
+  <g>
+    <rect x="50" y="600" width="500" height="135" rx="16" fill="#0077B6" stroke="#FFCA3A" stroke-width="2" />
+    <text x="300" y="642" font-family="'Outfit', 'Inter', sans-serif" font-weight="900" font-size="20" fill="#FFCA3A" text-anchor="middle" letter-spacing="1">
+      HYDRAULIC ARM SYRINGE SYSTEM DIA
+    </text>
+    <text x="300" y="668" font-family="'Inter', sans-serif" font-weight="700" font-size="12" fill="#FF595E" text-anchor="middle" letter-spacing="3">
+      INVENTION BLUEPRINTS & ENGINEERING ART
+    </text>
+    <line x1="120" y1="685" x2="480" y2="685" stroke="#8AC926" stroke-width="1.5" opacity="0.6"/>
+    <text x="300" y="710" font-family="'Inter', sans-serif" font-weight="500" font-size="11" fill="#FFFFFF" text-anchor="middle" opacity="0.85">
+      Elementary School STEAM Lab • Inspiring Awe &amp; Wonder
+    </text>
+  </g>
+</svg>

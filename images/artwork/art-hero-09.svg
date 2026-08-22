@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="artBgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2D6A4F" />
+      <stop offset="60%" stop-color="#40916C" />
+      <stop offset="100%" stop-color="#52B788" />
+    </linearGradient>
+    <linearGradient id="artAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D8F3DC" />
+      <stop offset="100%" stop-color="#8B5E3C" />
+    </linearGradient>
+    <radialGradient id="nebulaSun" cx="50%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#D8F3DC" stop-opacity="0.95"/>
+      <stop offset="35%" stop-color="#8B5E3C" stop-opacity="0.6"/>
+      <stop offset="70%" stop-color="#40916C" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#2D6A4F" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="artGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="600" height="800" fill="url(#artBgGrad)" />
+  
+  <!-- Outer Poster Border -->
+  <rect x="24" y="24" width="552" height="752" rx="16" fill="none" stroke="#D8F3DC" stroke-width="3" opacity="0.65"/>
+  <rect x="32" y="32" width="536" height="736" rx="12" fill="none" stroke="#52B788" stroke-width="1" opacity="0.4"/>
+  
+  <!-- Grand Sun / Celestial Center Glow -->
+  <circle cx="300" cy="300" r="220" fill="url(#nebulaSun)" />
+
+  <!-- Historical Pioneer & STEAM Hero Iconography -->
+  <g>
+    <!-- Glowing Halo of Knowledge -->
+    <circle cx="300" cy="280" r="140" fill="url(#artAccent)" opacity="0.85" filter="url(#artGlow)"/>
+    
+    <!-- Hero Bust Silhouette -->
+    <path d="M300,180 C260,180 235,215 235,260 C235,305 260,340 300,340 C340,340 365,305 365,260 C365,215 340,180 300,180 Z M180,480 C180,410 240,370 300,370 C360,370 420,410 420,480 Z" fill="#2D6A4F"/>
+    
+    <!-- Radiating Ideas & Formulas -->
+    <circle cx="300" cy="280" r="170" fill="none" stroke="#D8F3DC" stroke-width="3" stroke-dasharray="12 8"/>
+    <circle cx="210" cy="180" r="16" fill="#8B5E3C" filter="url(#artGlow)"/>
+    <circle cx="390" cy="180" r="16" fill="#52B788" filter="url(#artGlow)"/>
+    <circle cx="160" cy="310" r="12" fill="#D8F3DC"/>
+    <circle cx="440" cy="310" r="12" fill="#8B5E3C"/>
+  </g>
+
+  <!-- Poster Typography Banner -->
+  <g>
+    <rect x="50" y="600" width="500" height="135" rx="16" fill="#2D6A4F" stroke="#D8F3DC" stroke-width="2" />
+    <text x="300" y="642" font-family="'Outfit', 'Inter', sans-serif" font-weight="900" font-size="20" fill="#D8F3DC" text-anchor="middle" letter-spacing="1">
+      JANE GOODALL: LISTENING TO NATUR
+    </text>
+    <text x="300" y="668" font-family="'Inter', sans-serif" font-weight="700" font-size="12" fill="#52B788" text-anchor="middle" letter-spacing="3">
+      HISTORICAL STEAM HEROES & PIONEERS
+    </text>
+    <line x1="120" y1="685" x2="480" y2="685" stroke="#8B5E3C" stroke-width="1.5" opacity="0.6"/>
+    <text x="300" y="710" font-family="'Inter', sans-serif" font-weight="500" font-size="11" fill="#FFFFFF" text-anchor="middle" opacity="0.85">
+      Elementary School STEAM Lab • Inspiring Awe &amp; Wonder
+    </text>
+  </g>
+</svg>

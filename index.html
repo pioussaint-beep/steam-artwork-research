@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STEAM Lab Logo &amp; Artwork Inspiration Hub | Elementary School Awe &amp; Wonder</title>
+  <meta name="description" content="Explore 220+ curated STEAM lab logos, murals, posters, and artworks tailored for elementary school makerspaces with an emphasis on awe and wonder.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Ambient Space Background Canvas -->
+  <div class="ambient-stars" id="ambientStars"></div>
+
+  <!-- Header / Navigation Bar -->
+  <header class="site-header">
+    <div class="header-container">
+      <div class="logo-brand">
+        <div class="brand-icon">
+          <svg viewBox="0 0 32 32" width="28" height="28" fill="none">
+            <circle cx="16" cy="16" r="14" stroke="url(#hGrad)" stroke-width="2.5" stroke-dasharray="4 2"/>
+            <path d="M16 6 L19 13 L26 16 L19 19 L16 26 L13 19 L6 16 L13 13 Z" fill="url(#hGrad)"/>
+            <defs>
+              <linearGradient id="hGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#00F5D4"/>
+                <stop offset="50%" stop-color="#7B2CBF"/>
+                <stop offset="100%" stop-color="#FF007F"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">STEAM WONDER</span>
+          <span class="brand-subtitle">Elementary Lab Inspiration Suite</span>
+        </div>
+      </div>
+
+      <!-- Main Navigation Tabs -->
+      <nav class="nav-tabs" role="tablist">
+        <button class="nav-tab active" data-tab="all" role="tab">
+          <span class="tab-label">All Gallery</span>
+          <span class="tab-count" id="countAll">226</span>
+        </button>
+        <button class="nav-tab" data-tab="logos" role="tab">
+          <span class="tab-icon">✨</span>
+          <span class="tab-label">Logos &amp; Badges</span>
+          <span class="tab-count" id="countLogos">111</span>
+        </button>
+        <button class="nav-tab" data-tab="artwork" role="tab">
+          <span class="tab-icon">🎨</span>
+          <span class="tab-label">Art &amp; Murals</span>
+          <span class="tab-count" id="countArt">115</span>
+        </button>
+        <button class="nav-tab highlight-tab" data-tab="moodboard" role="tab">
+          <span class="tab-icon">⭐</span>
+          <span class="tab-label">My Moodboard</span>
+          <span class="tab-count pill-counter" id="countMoodboard">0</span>
+        </button>
+        <button class="nav-tab" data-tab="generator" role="tab">
+          <span class="tab-icon">💡</span>
+          <span class="tab-label">Concept Lab</span>
+        </button>
+        <button class="nav-tab" data-tab="guide" role="tab">
+          <span class="tab-icon">📖</span>
+          <span class="tab-label">Design Guide</span>
+        </button>
+      </nav>
+
+      <!-- Theme & Quick Actions -->
+      <div class="header-actions">
+        <button class="theme-toggle-btn" id="themeToggle" title="Toggle Light/Dark Theme">
+          <span class="theme-icon sun-icon">☀️</span>
+          <span class="theme-icon moon-icon">🌙</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <div class="hero-badge">🚀 ELEMENTARY STEAM DESIGN LAB</div>
+      <h1 class="hero-title">Designing with <span class="gradient-text">Awe &amp; Wonder</span></h1>
+      <p class="hero-desc">
+        Explore <strong>226 REAL curated STEAM logos, murals, cosmic posters, and maker art from across the web</strong> designed to ignite limitless curiosity, tinkering, and discovery in elementary students.
+      </p>
+      
+      <!-- Quick Stats Strip -->
+      <div class="hero-stats">
+        <div class="stat-pill">
+          <span class="stat-num">111</span>
+          <span class="stat-label">Real Logos &amp; Badges</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-num">115</span>
+          <span class="stat-label">Real Murals &amp; Artworks</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-num">12</span>
+          <span class="stat-label">Design Archetypes</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-num">1,100+</span>
+          <span class="stat-label">Extracted Color Swatches</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Container -->
+  <main class="main-container">
+    
+    <!-- GALLERY VIEW TAB -->
+    <div class="tab-view active" id="galleryView">
+      <!-- Search and Filter Bar -->
+      <div class="controls-panel">
+        <div class="search-box-wrapper">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="searchInput" class="search-input" placeholder="Search by motif (gears, rocket, butterfly, robot), color, category, or title...">
+          <button class="clear-search-btn" id="clearSearch" title="Clear Search">&times;</button>
+        </div>
+
+        <div class="filter-controls-row">
+          <!-- Grade Level Filter -->
+          <div class="filter-group">
+            <label class="filter-label">Grade Appeal:</label>
+            <div class="pill-selector" id="gradeFilter">
+              <button class="pill-btn active" data-grade="all">All Grades</button>
+              <button class="pill-btn" data-grade="K-2">K-2 Primary</button>
+              <button class="pill-btn" data-grade="3-5">3-5 Upper</button>
+              <button class="pill-btn" data-grade="K-5">K-5 Whole School</button>
+            </div>
+          </div>
+
+          <!-- Sort Selector -->
+          <div class="filter-group right-align">
+            <label class="filter-label" for="sortSelect">Sort By:</label>
+            <select id="sortSelect" class="custom-select">
+              <option value="featured">Featured / Curated</option>
+              <option value="name-asc">Title (A - Z)</option>
+              <option value="category">Category</option>
+              <option value="grade">Grade Appeal</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Category Pills -->
+        <div class="category-pills-wrapper">
+          <div class="category-scroll" id="categoryPills">
+            <button class="cat-pill active" data-category="all">All Categories</button>
+            <button class="cat-pill" data-category="Cosmic & Space Wonder">🚀 Cosmic &amp; Space Wonder</button>
+            <button class="cat-pill" data-category="Cosmic Wonder & Space Posters">🌌 NASA / JPL Space Art</button>
+            <button class="cat-pill" data-category="Gears, Lightbulbs & Tinkering">⚙️ Gears &amp; Lightbulbs</button>
+            <button class="cat-pill" data-category="STEAM Wall Murals & Lab Art">🎨 Wall Murals &amp; Lab Signs</button>
+            <button class="cat-pill" data-category="Mascots & Robotics">🤖 Mascots &amp; Robots</button>
+            <button class="cat-pill" data-category="Nature & Bio-Tech">🌿 Nature &amp; Biomimicry</button>
+            <button class="cat-pill" data-category="Bio-Art & Microscopic Wonders">🔬 Microscopic Bio-Art</button>
+            <button class="cat-pill" data-category="Typography & Monograms">🔤 Typography &amp; Badges</button>
+            <button class="cat-pill" data-category="Generative Math & Optical Wonders">📐 Math &amp; Fractal Geometry</button>
+            <button class="cat-pill" data-category="Invention Blueprints & Engineering Art">📐 Blueprints &amp; Inventions</button>
+            <button class="cat-pill" data-category="Historical STEAM Heroes & Pioneers">🏆 Pioneers &amp; STEAM Heroes</button>
+            <button class="cat-pill" data-category="Renowned Real-World Labs">🏛️ Famous Maker Labs</button>
+          </div>
+        </div>
+
+        <!-- Active Filter Indicator Bar -->
+        <div class="active-filter-bar" id="activeFilterBar">
+          <span class="results-count-text">Showing <strong id="visibleCount">221</strong> items</span>
+          <div class="active-tag-chips" id="activeChips"></div>
+          <button class="reset-filters-btn" id="resetFiltersBtn">Reset Filters</button>
+        </div>
+      </div>
+
+      <!-- Items Grid -->
+      <div class="items-grid" id="itemsGrid">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+
+      <!-- Empty State -->
+      <div class="empty-state" id="emptyState" style="display: none;">
+        <div class="empty-icon">🔭</div>
+        <h3>No matching inspiration found</h3>
+        <p>Try clearing your search terms or picking another category.</p>
+        <button class="btn btn-primary" id="resetFromEmpty">Show All 220+ Items</button>
+      </div>
+    </div>
+
+    <!-- MOODBOARD / SHORTLIST TAB -->
+    <div class="tab-view" id="moodboardView" style="display: none;">
+      <div class="moodboard-header">
+        <div class="moodboard-intro">
+          <h2>⭐ My STEAM Lab Shortlist &amp; Moodboard</h2>
+          <p>Curate your favorite logos, color schemes, and art styles. Add custom notes and export a ready-to-share design brief for your school team or graphic designer.</p>
+        </div>
+        <div class="moodboard-actions">
+          <button class="btn btn-secondary" id="clearMoodboardBtn">Clear Shortlist</button>
+          <button class="btn btn-primary" id="exportBriefBtn">
+            <span>📄</span> Export Design Brief
+          </button>
+        </div>
+      </div>
+
+      <!-- Moodboard Analysis Summary Banner -->
+      <div class="moodboard-summary-card" id="moodboardSummaryCard">
+        <!-- Rendered by moodboard.js -->
+      </div>
+
+      <!-- Moodboard Items Grid -->
+      <div class="items-grid" id="moodboardGrid">
+        <!-- Rendered by moodboard.js -->
+      </div>
+
+      <!-- Moodboard Empty State -->
+      <div class="empty-state" id="moodboardEmptyState">
+        <div class="empty-icon">💡</div>
+        <h3>Your moodboard is empty</h3>
+        <p>Click the <strong>Heart (⭐)</strong> on any logo or artwork in the gallery to save it to your personal shortlist.</p>
+        <button class="btn btn-primary" id="browseGalleryFromMoodboard">Browse Gallery Now</button>
+      </div>
+    </div>
+
+    <!-- CONCEPT & SLOGAN GENERATOR TAB -->
+    <div class="tab-view" id="generatorView" style="display: none;">
+      <div class="generator-container">
+        <div class="generator-header">
+          <h2>💡 Elementary STEAM Lab Concept &amp; Slogan Generator</h2>
+          <p>Need ideas for your lab motto, room naming, mascot, or station zones? Generate tailored creative concepts based on "Awe &amp; Wonder".</p>
+        </div>
+
+        <div class="generator-card">
+          <div class="gen-controls">
+            <div class="form-group">
+              <label for="schoolNameInput">Your School / Lab Name (Optional):</label>
+              <input type="text" id="schoolNameInput" class="form-input" placeholder="e.g. Oakridge Elementary, Starfield STEAM Lab...">
+            </div>
+            <div class="form-group">
+              <label for="themeFocusSelect">Primary Wonder Theme:</label>
+              <select id="themeFocusSelect" class="form-select">
+                <option value="cosmic">Cosmic Wonder &amp; Deep Space Exploration</option>
+                <option value="tinkering">Hands-On Tinkering &amp; Living Gears</option>
+                <option value="nature">Biomimicry, Nature &amp; Eco-Tech</option>
+                <option value="future">Futuristic Robotics &amp; Invention</option>
+                <option value="creative">Colorful Prismatic Art &amp; Design</option>
+              </select>
+            </div>
+            <button class="btn btn-accent full-width" id="generateConceptBtn">
+              ✨ Generate Custom STEAM Concepts &amp; Mottos
+            </button>
+          </div>
+
+          <div class="gen-results" id="genResultsArea">
+            <!-- Rendered by generator logic -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DESIGN PSYCHOLOGY & RESEARCH GUIDE TAB -->
+    <div class="tab-view" id="guideView" style="display: none;">
+      <div class="generator-container">
+        <div class="generator-header">
+          <div class="hero-badge">🧠 SCIENTIFIC RESEARCH &amp; DESIGN PRINCIPLES</div>
+          <h2>The Psychology of STEAM Lab Branding &amp; Art</h2>
+          <p>Key takeaways from our comprehensive research report on shape psychology, color impact, and pedagogical artwork design for elementary makerspaces.</p>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 2rem;">
+          
+          <!-- Card 1: Shape Psychology -->
+          <div class="generator-card">
+            <h3 style="font-size: 1.3rem; margin-bottom: 0.75rem; color: var(--color-cyan); display: flex; align-items: center; gap: 8px;">
+              <span>🔷</span> 1. The Psychology of Shapes in Elementary Education
+            </h3>
+            <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1.25rem;">
+              Shapes trigger subconscious emotional and cognitive responses rooted in evolutionary psychology and developmental learning:
+            </p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem;">
+              <div style="background: var(--bg-surface-elevated); padding: 1.1rem; border-radius: 12px; border-top: 3px solid var(--color-cyan);">
+                <h4 style="font-size: 1.05rem; margin-bottom: 0.4rem; color: var(--text-primary);">⭕ Circles &amp; Ovals</h4>
+                <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;">
+                  <strong>Core Emotion:</strong> Unity, community, harmony, inclusivity.<br>
+                  <strong>Best For:</strong> Elementary collaborative maker tables and welcoming entry signage. Softens high-tech anxiety.
+                </p>
+              </div>
+
+              <div style="background: var(--bg-surface-elevated); padding: 1.1rem; border-radius: 12px; border-top: 3px solid var(--color-blue);">
+                <h4 style="font-size: 1.05rem; margin-bottom: 0.4rem; color: var(--text-primary);">🔺 Triangles &amp; Chevrons</h4>
+                <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;">
+                  <strong>Core Emotion:</strong> Energy, innovation, progress, forward momentum.<br>
+                  <strong>Best For:</strong> Robotics, rocketry, and flight challenge badges. Encourages reaching higher.
+                </p>
+              </div>
+
+              <div style="background: var(--bg-surface-elevated); padding: 1.1rem; border-radius: 12px; border-top: 3px solid var(--color-green);">
+                <h4 style="font-size: 1.05rem; margin-bottom: 0.4rem; color: var(--text-primary);">🌿 Organic &amp; Spirals</h4>
+                <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;">
+                  <strong>Core Emotion:</strong> Growth, curiosity, natural authenticity.<br>
+                  <strong>Best For:</strong> Biomimicry, Fibonacci math spirals, eco-gardens, and life science corners.
+                </p>
+              </div>
+
+              <div style="background: var(--bg-surface-elevated); padding: 1.1rem; border-radius: 12px; border-top: 3px solid var(--color-yellow);">
+                <h4 style="font-size: 1.05rem; margin-bottom: 0.4rem; color: var(--text-primary);">⬛ Squares &amp; Hexagons</h4>
+                <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;">
+                  <strong>Core Emotion:</strong> Stability, order, modular logic.<br>
+                  <strong>Best For:</strong> Honeycomb tool organizers, modular student storage bins, and block coding stations.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Color Psychology -->
+          <div class="generator-card">
+            <h3 style="font-size: 1.3rem; margin-bottom: 0.75rem; color: var(--color-yellow); display: flex; align-items: center; gap: 8px;">
+              <span>🎨</span> 2. The Science of Color in the STEAM Classroom
+            </h3>
+            <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1.25rem;">
+              Studies indicate color influences up to 90% of initial subconscious judgments:
+            </p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem;">
+              <div style="background: var(--bg-surface-elevated); padding: 1rem; border-radius: 10px; border-left: 4px solid #3A86FF;">
+                <strong style="color: #3A86FF;">Electric Blue:</strong>
+                <p style="font-size: 0.84rem; color: var(--text-secondary); margin-top: 4px;">Trust, calm, scientific rigor, and deep focus.</p>
+              </div>
+              <div style="background: var(--bg-surface-elevated); padding: 1rem; border-radius: 10px; border-left: 4px solid #10B981;">
+                <strong style="color: #10B981;">Emerald Green:</strong>
+                <p style="font-size: 0.84rem; color: var(--text-secondary); margin-top: 4px;">Growth, balance, biological inquiry, sustainability.</p>
+              </div>
+              <div style="background: var(--bg-surface-elevated); padding: 1rem; border-radius: 10px; border-left: 4px solid #FFB703;">
+                <strong style="color: #FFB703;">Sunny Yellow / Gold:</strong>
+                <p style="font-size: 0.84rem; color: var(--text-secondary); margin-top: 4px;">Optimism, Eureka sparks, cheerful enthusiasm.</p>
+              </div>
+              <div style="background: var(--bg-surface-elevated); padding: 1rem; border-radius: 10px; border-left: 4px solid #F72585;">
+                <strong style="color: #F72585;">Magenta / Orange:</strong>
+                <p style="font-size: 0.84rem; color: var(--text-secondary); margin-top: 4px;">Creative passion, excitement, hands-on kinetic building.</p>
+              </div>
+              <div style="background: var(--bg-surface-elevated); padding: 1rem; border-radius: 10px; border-left: 4px solid #7B2CBF;">
+                <strong style="color: #7B2CBF;">Deep Cosmic Purple:</strong>
+                <p style="font-size: 0.84rem; color: var(--text-secondary); margin-top: 4px;">Cosmic mystery, wonder, wisdom, and imagination.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Best Practices for Elementary STEAM Branding & Murals -->
+          <div class="generator-card">
+            <h3 style="font-size: 1.3rem; margin-bottom: 0.75rem; color: var(--color-magenta); display: flex; align-items: center; gap: 8px;">
+              <span>💡</span> 3. Best Practices for Lab Signage &amp; Murals
+            </h3>
+            
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.85rem; font-size: 0.92rem; color: var(--text-secondary);">
+              <li style="display: flex; gap: 10px; align-items: flex-start;">
+                <span style="color: var(--color-cyan); font-weight: bold;">✔</span>
+                <div><strong style="color: var(--text-primary);">Balance Art &amp; Tech:</strong> Fuse mechanical elements (gears, circuit traces) with creative organic elements (paint splatters, nature seeds, prismatic gradients) so it doesn't feel like a rigid computer lab.</div>
+              </li>
+              <li style="display: flex; gap: 10px; align-items: flex-start;">
+                <span style="color: var(--color-cyan); font-weight: bold;">✔</span>
+                <div><strong style="color: var(--text-primary);">Prioritize Conceptual Understanding:</strong> Use murals to visualize abstract science (nanostructures, light refraction, planetary scale) rather than just decorative clip-art.</div>
+              </li>
+              <li style="display: flex; gap: 10px; align-items: flex-start;">
+                <span style="color: var(--color-cyan); font-weight: bold;">✔</span>
+                <div><strong style="color: var(--text-primary);">Design for Scalability:</strong> Ensure the primary logo works equally well on an 8-foot hallway wall decal, a small lab coat chest patch, and a 3D-printed keychain.</div>
+              </li>
+              <li style="display: flex; gap: 10px; align-items: flex-start;">
+                <span style="color: var(--color-yellow); font-weight: bold;">⚠</span>
+                <div><strong style="color: var(--text-primary);">Trademark Awareness:</strong> Avoid the Valve "Steam" video game piston icon; focus on the educational acronym (Science, Tech, Engineering, Arts, Math).</div>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- LIGHTBOX / ITEM DETAIL MODAL -->
+  <div class="modal-overlay" id="itemModal" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close modal">&times;</button>
+      
+      <div class="modal-body-layout">
+        <!-- Left: High Res Image Preview & Palette Swatches -->
+        <div class="modal-visual-pane">
+          <div class="modal-img-wrapper" id="modalImgWrapper">
+            <img id="modalImg" src="" alt="STEAM Artwork Preview">
+          </div>
+          
+          <div class="modal-palette-box">
+            <span class="palette-title">🎨 Color Palette (Click to Copy Hex):</span>
+            <div class="modal-palette-swatches" id="modalPaletteSwatches"></div>
+          </div>
+        </div>
+
+        <!-- Right: Rich Metadata & Design Analysis -->
+        <div class="modal-info-pane">
+          <div class="modal-meta-header">
+            <span class="badge-type" id="modalTypeBadge">Logo</span>
+            <span class="badge-grade" id="modalGradeBadge">Grades K-5</span>
+            <span class="badge-category" id="modalCategoryBadge">Cosmic Wonder</span>
+          </div>
+
+          <h2 class="modal-title" id="modalTitle">Title of Item</h2>
+          
+          <div class="modal-section awe-section">
+            <div class="section-heading">
+              <span class="sec-icon">✨</span>
+              <strong>Why it Sparks "Awe &amp; Wonder" in Elementary Kids:</strong>
+            </div>
+            <p id="modalAweFactor" class="sec-text"></p>
+          </div>
+
+          <div class="modal-section takeaways-section">
+            <div class="section-heading">
+              <span class="sec-icon">💡</span>
+              <strong>Design Takeaways for Your STEAM Lab:</strong>
+            </div>
+            <p id="modalTakeaways" class="sec-text"></p>
+          </div>
+
+          <div class="modal-section">
+            <div class="section-heading">
+              <span class="sec-icon">🏷️</span>
+              <strong>Key Motifs &amp; Elements:</strong>
+            </div>
+            <div class="tag-chips-list" id="modalMotifsList"></div>
+          </div>
+
+          <!-- User Notes Box for Shortlist -->
+          <div class="modal-section notes-section">
+            <div class="section-heading">
+              <span class="sec-icon">📝</span>
+              <strong>My Custom Design Notes:</strong>
+            </div>
+            <textarea id="modalUserNotes" class="user-notes-input" placeholder="Add your notes on what you like/dislike about this idea for your lab..."></textarea>
+          </div>
+
+          <!-- Modal Action Bar -->
+          <div class="modal-footer-actions">
+            <button class="btn btn-secondary" id="modalShortlistBtn">
+              <span class="star-icon">⭐</span>
+              <span id="modalShortlistLabel">Save to Moodboard</span>
+            </button>
+            <a href="#" id="modalSourceLink" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+              <span>🔗</span> View Source Reference
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EXPORT DESIGN BRIEF MODAL -->
+  <div class="modal-overlay" id="exportModal" aria-hidden="true">
+    <div class="modal-card export-modal-card" role="dialog" aria-modal="true">
+      <button class="modal-close-btn" id="exportModalCloseBtn">&times;</button>
+      <div class="export-modal-header">
+        <h2>📄 STEAM Lab Design Brief &amp; Moodboard Report</h2>
+        <p>Share this curated summary with your administration, art teacher, or graphic designer.</p>
+      </div>
+
+      <div class="export-actions-bar">
+        <button class="btn btn-accent" id="printReportBtn">🖨️ Print / Save as PDF</button>
+        <button class="btn btn-secondary" id="copyMarkdownBtn">📋 Copy Markdown</button>
+        <button class="btn btn-outline" id="downloadJsonBtn">💾 Download JSON</button>
+      </div>
+
+      <div class="export-content-preview" id="exportContentArea">
+        <!-- Rendered by moodboard.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/moodboard.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

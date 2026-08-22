@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#140152" />
+      <stop offset="100%" stop-color="#22007C" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#49117C" />
+      <stop offset="50%" stop-color="#8C00FC" />
+      <stop offset="100%" stop-color="#D783FF" />
+    </linearGradient>
+    <linearGradient id="glowGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8C00FC" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#49117C" stop-opacity="0.9"/>
+    </linearGradient>
+    <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#8C00FC" stop-opacity="0.9"/>
+      <stop offset="60%" stop-color="#D783FF" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#140152" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="512" height="512" rx="48" fill="url(#bgGrad)" />
+  <circle cx="256" cy="230" r="160" fill="url(#sunGlow)" />
+  
+  <!-- Outer Tech / Geometric Frame -->
+  <circle cx="256" cy="230" r="170" fill="none" stroke="#49117C" stroke-width="3" stroke-dasharray="8 6" opacity="0.6"/>
+  <circle cx="256" cy="230" r="185" fill="none" stroke="#8C00FC" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- Cosmic Elements -->
+  <g filter="url(#softShadow)">
+    <!-- Orbit Rings -->
+    <ellipse cx="256" cy="230" rx="130" ry="45" fill="none" stroke="url(#accentGrad)" stroke-width="5" transform="rotate(-25 256 230)" filter="url(#neonGlow)"/>
+    <ellipse cx="256" cy="230" rx="140" ry="40" fill="none" stroke="#8C00FC" stroke-width="2" stroke-dasharray="6 4" transform="rotate(35 256 230)"/>
+    
+    <!-- Central Rocket / Core Icon -->
+    <path d="M256,120 Q280,180 280,240 L232,240 Q232,180 256,120 Z" fill="url(#accentGrad)" filter="url(#neonGlow)"/>
+    <path d="M232,240 L210,270 L236,260 Z" fill="#D783FF"/>
+    <path d="M280,240 L302,270 L276,260 Z" fill="#D783FF"/>
+    <circle cx="256" cy="180" r="14" fill="#140152" stroke="#8C00FC" stroke-width="3"/>
+    
+    <!-- Rocket Thruster Flames -->
+    <path d="M246,260 Q256,310 256,310 Q256,310 266,260 Z" fill="#8C00FC" filter="url(#neonGlow)"/>
+    <path d="M250,260 Q256,290 256,290 Q256,290 262,260 Z" fill="#FFFFFF"/>
+    
+    <!-- Constellation Stars -->
+    <circle cx="150" cy="150" r="5" fill="#8C00FC" filter="url(#neonGlow)"/>
+    <circle cx="370" cy="140" r="6" fill="#49117C" filter="url(#neonGlow)"/>
+    <circle cx="360" cy="300" r="4" fill="#8C00FC"/>
+    <circle cx="140" cy="290" r="5" fill="#D783FF"/>
+    <line x1="150" y1="150" x2="200" y2="120" stroke="#49117C" stroke-width="1.5" stroke-dasharray="3 3" opacity="0.7"/>
+    <line x1="370" y1="140" x2="330" y2="170" stroke="#8C00FC" stroke-width="1.5" stroke-dasharray="3 3" opacity="0.7"/>
+  </g>
+
+  <!-- Bottom Text Banner -->
+  <g filter="url(#softShadow)">
+    <rect x="40" y="405" width="432" height="68" rx="20" fill="#140152" stroke="url(#accentGrad)" stroke-width="2.5" />
+    <text x="256" y="445" font-family="'Outfit', 'Inter', 'Segoe UI', sans-serif" font-weight="800" font-size="20" fill="#8C00FC" text-anchor="middle" letter-spacing="1.5">
+      GALAXY EXPLORER STEAM CLUB
+    </text>
+    <text x="256" y="464" font-family="'Inter', sans-serif" font-weight="600" font-size="11" fill="#49117C" text-anchor="middle" letter-spacing="3" opacity="0.9">
+      COSMIC & SPACE WONDER
+    </text>
+  </g>
+</svg>
